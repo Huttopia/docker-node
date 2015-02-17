@@ -19,7 +19,8 @@ RUN git config --global http.sslVerify false
 RUN npm install -g bower
 
 # Install Gulp
-RUN npm install -g gulp
+RUN npm install -g gulp \
+    && npm install --save-dev gulp-clean
 
 # Install Eslint
 RUN npm install -g eslint

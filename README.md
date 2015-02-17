@@ -6,5 +6,6 @@
 docker run --name=huttopia-nodejs-bower-gulp-eslint
     --rm
     -it
+    ~/.ssh:/root/.shh
     huttopia/nodejs-bower-gulp-eslint:latest
 ```

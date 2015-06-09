@@ -9,22 +9,13 @@ RUN apt-get update \
         nodejs \
         npm
 
-# Fix Node.js On Ubuntu
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-
 # Config Git
 RUN git config --global http.sslVerify false
 
-# Install Bower
-RUN npm install -g bower
-
-# Install Gulp
-RUN npm install -g gulp \
-    && npm install --save-dev gulp-clean
-
-# Install Eslint
-RUN npm install -g eslint
-
 WORKDIR /src
 
-CMD ["bash"]
+# Binarie install or start Node
+ADD assets/bin/node /usr/bin/node
+RUN chmod +x /usr/bin/node
+
+ENTRYPOINT ["/usr/bin/node"]

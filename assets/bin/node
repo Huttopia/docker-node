@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$1" == "install" ]; then
+	npm install --loglevel info
+else
+	/usr/bin/nodejs node_modules/$@
+fi

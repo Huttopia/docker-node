@@ -1,11 +1,11 @@
-# Docker Node.js Bower Gulp Eslint
+# Docker Node
 
 ### Quick start
 
 ```bash
-docker run --name=huttopia-nodejs-bower-gulp-eslint
+docker run --name=huttopia-node
     --rm
     -it
     ~/.ssh:/root/.shh
-    huttopia/nodejs-bower-gulp-eslint:latest
+    huttopia/node:latest
 ```

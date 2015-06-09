@@ -13,7 +13,7 @@ help:
 # Manage
 build:
 	@echo "$(step) Building $(step)"
-	@docker build --tag=huttopia/nodejs-bower-gulp-eslint:latest .
+	@docker build --tag=huttopia/node .
 
 bash:
-	@docker run --rm -it --name huttopia-nodejs-bower-gulp-eslint huttopia/nodejs-bower-gulp-eslint:latest bash
+	@docker run --rm -it --name huttopia-node huttopia/node:latest bash

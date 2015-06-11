@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install Node.js and NPM
-RUN apt-get update \
+RUN apt-get update -qq \
     && apt-get install -qqy \
         git \
         nodejs \
@@ -11,6 +11,11 @@ RUN apt-get update \
 
 # Config Git
 RUN git config --global http.sslVerify false
+
+# Install Notify Osd for Gulp Notify
+RUN apt-get update -qq \
+    && apt-get install -qqy \
+        notify-osd
 
 WORKDIR /src
 

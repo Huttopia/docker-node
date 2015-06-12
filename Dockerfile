@@ -9,6 +9,9 @@ RUN apt-get update -qq \
         nodejs \
         npm
 
+# Fix Node.js On Ubuntu
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
 # Config Git
 RUN git config --global http.sslVerify false
 
@@ -20,7 +23,7 @@ RUN apt-get update -qq \
 WORKDIR /src
 
 # Binarie install or start Node
-ADD assets/bin/node /usr/bin/node
-RUN chmod +x /usr/bin/node
+ADD assets/bin/node /bin/node
+RUN chmod +x /bin/node
 
-ENTRYPOINT ["/usr/bin/node"]
+ENTRYPOINT ["/bin/node"]

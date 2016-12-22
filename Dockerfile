@@ -2,15 +2,17 @@ FROM ubuntu:14.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# Install Node.js and NPM
+# Install Curl
 RUN apt-get update -qq \
     && apt-get install -qqy \
-        git \
-        nodejs \
-        npm
+        curl
 
-# Fix Node.js On Ubuntu
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+# Install Node.js and NPM
+RUN apt-get update -qq \
+    && curl -sL https://deb.nodesource.com/setup_6.x | sudo bash - \
+    && apt-get install -qqy \
+        git \
+        nodejs
 
 # Config Git
 RUN git config --global http.sslVerify false
